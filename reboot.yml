@@ -3,4 +3,11 @@
 - hosts: all
   tasks:
     - name: reboot server
-      shell: reboot
+      reboot:
+        msg: "reboot server"
+        connect_time: 5
+        reboot_time: 300
+        pre_reboot_delay: 0
+        post_reboot_delay: 30
+        test_command: uptime
+             
